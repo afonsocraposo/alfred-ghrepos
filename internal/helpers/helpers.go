@@ -13,7 +13,7 @@ import (
 	"github.com/sahilm/fuzzy"
 )
 
-const CACHE_PATH = "/Library/Caches/com.runningwithcrayons.Alfred/Workflow Data/com.afonsocraposo.ghrepos/repos.json"
+const CACHE_PATH = "/Library/Caches/com.runningwithcrayons.Alfred/Workflow Data/com.afonsoraposo.ghrepos/repos.json"
 
 func getCachePath() string {
 	dirname, err := os.UserHomeDir()
