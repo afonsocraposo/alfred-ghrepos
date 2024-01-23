@@ -7,7 +7,8 @@ import (
 )
 
 func reposToAlfredItems(repos []Repo) map[string][]AlfredItem {
-    items := make([]AlfredItem, len(repos))
+    l := len(repos)
+    items := make([]AlfredItem, max(l, 1))
 
     for i, repo := range repos {
         item := AlfredItem{
@@ -21,6 +22,13 @@ func reposToAlfredItems(repos []Repo) map[string][]AlfredItem {
             },
         }
         items[i] = item
+    }
+    if l == 0 {
+        items[0] = AlfredItem{
+            Title: "No results found",
+            Subtitle: "Press <Enter> to refresh the cache",
+            Arg: "empty-item-identifier",
+        }
     }
 
     return map[string][]AlfredItem{"items": items}
